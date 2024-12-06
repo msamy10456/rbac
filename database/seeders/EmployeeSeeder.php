@@ -23,7 +23,7 @@ class EmployeeSeeder extends Seeder
            'email' => 'employee@gmail.com',
            'password' => Hash::make(123456),
        ]);
-       $employee->sync(Task::pluck('id')->toArray());
+       $employee->tasks()->sync(Task::pluck('id')->toArray());
 
     }
 }

@@ -16,6 +16,6 @@ class Employee extends Authenticatable
     ];
 
     public function tasks(){
-        return $this->belongsToMany(Task::class,'task_employees','task_id','employee_id');
+        return $this->belongsToMany(Task::class,'task_employees','employee_id','task_id');
     }
 }
