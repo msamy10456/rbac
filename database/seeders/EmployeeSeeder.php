@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Admin;
 use App\Models\Employee;
+use App\Models\Task;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
@@ -17,11 +18,12 @@ class EmployeeSeeder extends Seeder
      */
     public function run(): void
     {
-      Employee::create([
+     $employee= Employee::create([
            'name' => 'employee',
            'email' => 'employee@gmail.com',
            'password' => Hash::make(123456),
        ]);
+       $employee->sync(Task::pluck('id')->toArray());
 
     }
 }
