@@ -22,5 +22,10 @@ passowrd:123456
 https://rbac.epicwall.net/login for login
 https://rbac.epicwall.net/employee/task  for task
 
+To make test for employee crud and sync task 
 
+php artisan test 
+
+
+![alt text](image.png)
 
